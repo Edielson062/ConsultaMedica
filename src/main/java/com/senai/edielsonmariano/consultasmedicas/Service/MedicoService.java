@@ -1,6 +1,7 @@
 package com.senai.edielsonmariano.consultasmedicas.Service;
 
 import com.senai.edielsonmariano.consultasmedicas.Repository.MedicoRepository;
+import com.senai.edielsonmariano.consultasmedicas.entidades.Consulta;
 import com.senai.edielsonmariano.consultasmedicas.entidades.Medico;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,18 @@ public class MedicoService {
     public Medico buscaMedico(Integer id) {
         return medicoRepository.findById(id).orElseThrow(() -> new RuntimeException("Médico não encontrado"));
     }
+
+//    public List<Medico> buscarNomeMedico(String nome) {
+//        return medicoRepository.buscarNomeMedico(nome);
+//    }
+//
+//    public List<Medico> buscarCrmMedico(Integer crm) {
+//        return medicoRepository.buscarCrmMedico(crm);
+//    }
+//
+//    public List<Medico> buscarEspecialidadeMedico(String especialidade) {
+//        return medicoRepository.buscarEspecialidadeMedico(especialidade);
+//    }
 
     public Medico salvaMedico(Medico medico) {
         return medicoRepository.save(medico);

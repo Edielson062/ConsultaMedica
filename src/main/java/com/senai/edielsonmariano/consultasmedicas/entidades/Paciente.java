@@ -20,7 +20,7 @@ public class Paciente {
     private String cpf;
 
     @Column(name = "dataNascimento", nullable = false, length = 10)
-    private Date dataNascimento;
+    private String dataNascimento;
 
     @Column(name = "telefone", nullable = false, length = 11)
     private String telefone;
@@ -31,7 +31,7 @@ public class Paciente {
     public Paciente() {
     }
 
-    public Paciente(Integer id, String nomePaciente, Date dataNascimento, String cpf, String telefone) {
+    public Paciente(Integer id, String nomePaciente, String dataNascimento, String cpf, String telefone) {
         this.idPaciente = id;
         this.nomePaciente = nomePaciente;
         this.dataNascimento = dataNascimento;
@@ -63,11 +63,11 @@ public class Paciente {
         this.cpf = cpf;
     }
 
-    public Date getDataNascimento() {
+    public String getDataNascimento() {
         return dataNascimento;
     }
 
-    public void setDataNascimento(Date dataNascimento) {
+    public void setDataNascimento(String dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
 

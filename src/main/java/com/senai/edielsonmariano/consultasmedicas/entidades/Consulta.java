@@ -14,24 +14,25 @@ public class Consulta {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idConsulta;
 
-    @Column(name = "dataConsulta", nullable = false, length = 10)
-    private Date dataConsulta;
+    @Column(name = "dataConsulta", length = 10)
+    private String dataConsulta;
 
-    @Column(name = "horaConsulta", nullable = false, length = 10)
-    private Time horaConsulta;
+    @Column(name = "horaConsulta", length = 10)
+    private String horaConsulta;
 
     @ManyToOne
-    @JoinColumn(name = "medico[idMedico]")
+    @JoinColumn(name = "idPaciente")
+    private Paciente paciente;
+
+    @ManyToOne
+    @JoinColumn(name = "idMedico")
     private Medico medico;
 
-    @ManyToOne
-    @JoinColumn(name = "paciente[idPaciente]")
-    private Paciente paciente;
 
     public Consulta() {
     }
 
-    public Consulta(Date dataConsulta, Integer idConsulta, Time horaConsulta, Medico medico, Paciente paciente) {
+    public Consulta(String dataConsulta, Integer idConsulta, String horaConsulta, Medico medico, Paciente paciente) {
         this.dataConsulta = dataConsulta;
         this.idConsulta = idConsulta;
         this.horaConsulta = horaConsulta;
@@ -47,19 +48,19 @@ public class Consulta {
         this.idConsulta = idConsulta;
     }
 
-    public Date getDataConsulta() {
+    public String getDataConsulta() {
         return dataConsulta;
     }
 
-    public void setDataConsulta(Date dataConsulta) {
+    public void setDataConsulta(String dataConsulta) {
         this.dataConsulta = dataConsulta;
     }
 
-    public Time getHoraConsulta() {
+    public String getHoraConsulta() {
         return horaConsulta;
     }
 
-    public void setHoraConsulta(Time horaConsulta) {
+    public void setHoraConsulta(String horaConsulta) {
         this.horaConsulta = horaConsulta;
     }
 
