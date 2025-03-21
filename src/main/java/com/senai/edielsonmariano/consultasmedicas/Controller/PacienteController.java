@@ -24,16 +24,6 @@ public class PacienteController {
         return pacienteService.buscaPaciente(id);
     }
 
-//    @GetMapping("/nomePaciente/{nomePaciente}")
-//    public List<Paciente> buscarNomePaciente(@PathVariable String nomePaciente) {
-//        return pacienteService.buscarNomePaciente(nomePaciente);
-//    }
-//
-//    @GetMapping("/cpfPaciente/{cpf}")
-//    public List<Paciente> buscaPacientePorCpf(@PathVariable String cpf) {
-//        return pacienteService.busacaCpfPaciente(cpf);
-//    }
-
     @PostMapping
     public Paciente cadastrarPaciente(Paciente paciente) {
         return pacienteService.salvaPaciente(paciente);

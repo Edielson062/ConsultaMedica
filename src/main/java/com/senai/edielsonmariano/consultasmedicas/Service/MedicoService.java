@@ -22,18 +22,6 @@ public class MedicoService {
         return medicoRepository.findById(id).orElseThrow(() -> new RuntimeException("Médico não encontrado"));
     }
 
-//    public List<Medico> buscarNomeMedico(String nome) {
-//        return medicoRepository.buscarNomeMedico(nome);
-//    }
-//
-//    public List<Medico> buscarCrmMedico(Integer crm) {
-//        return medicoRepository.buscarCrmMedico(crm);
-//    }
-//
-//    public List<Medico> buscarEspecialidadeMedico(String especialidade) {
-//        return medicoRepository.buscarEspecialidadeMedico(especialidade);
-//    }
-
     public Medico salvaMedico(Medico medico) {
         return medicoRepository.save(medico);
     }

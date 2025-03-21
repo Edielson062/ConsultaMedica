@@ -1,5 +1,6 @@
 package com.senai.edielsonmariano.consultasmedicas.entidades;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -25,8 +26,10 @@ public class Paciente {
     @Column(name = "telefone", nullable = false, length = 11)
     private String telefone;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "paciente")
+    @JsonManagedReference
     private List<Consulta> consultas;
+
 
     public Paciente() {
     }

@@ -24,22 +24,6 @@ public class MedicoController {
         return medicoService.buscaMedico(id);
     }
 
-//    @GetMapping("/nomeMedico/{nome}")
-//    public List<Medico> buscaMedicoPorNome(@PathVariable String nome) {
-//        return medicoService.buscarNomeMedico(nome);
-//    }
-//
-//    @GetMapping("/crmMedico/{crm}")
-//    public List<Medico> buscaMedicoPorCrm(@PathVariable Integer crm) {
-//        return medicoService.buscarCrmMedico(crm);
-//    }
-//
-//    @GetMapping("/especialidadeMedico/{especialidade}")
-//    public List<Medico> buscaMedicoPorEspecialidade(@PathVariable String especialidade) {
-//        return medicoService.buscarEspecialidadeMedico(especialidade);
-//    }
-
-
     @PostMapping
     public Medico cadastrarMedico(@RequestBody Medico medico) {
         return medicoService.salvaMedico(medico);

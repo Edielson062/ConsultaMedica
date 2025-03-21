@@ -1,5 +1,6 @@
 package com.senai.edielsonmariano.consultasmedicas.entidades;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 
@@ -21,11 +22,13 @@ public class Consulta {
     private String horaConsulta;
 
     @ManyToOne
-    @JoinColumn(name = "idPaciente")
+    @JoinColumn(name = "idPaciente", nullable = false)
+    @JsonBackReference
     private Paciente paciente;
 
     @ManyToOne
-    @JoinColumn(name = "idMedico")
+    @JoinColumn(name = "idMedico", nullable = false)
+    @JsonBackReference
     private Medico medico;
 
 

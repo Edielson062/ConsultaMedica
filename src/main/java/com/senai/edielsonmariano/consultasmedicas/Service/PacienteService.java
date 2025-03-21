@@ -21,15 +21,6 @@ public class PacienteService {
         return pacienteRepository.findById(id).orElseThrow(() -> new RuntimeException("Paciente não encontrado"));
     }
 
-//    public List<Paciente> buscarNomePaciente(String nome) {
-//        return pacienteRepository.buscarNomePaciente(nome);
-//    }
-//
-//    public List<Paciente> busacaCpfPaciente(String cpf) {
-//        return pacienteRepository.buscarCpfPaciente(cpf);
-//    }
-
-
     public Paciente salvaPaciente(Paciente paciente) {
         return pacienteRepository.save(paciente);
     }

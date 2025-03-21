@@ -29,16 +29,6 @@ public class ConsultaController {
     public List<Consulta> buscaConsultasPaciente(@PathVariable String nomePaciente){
         return consultaService.buscaConsultaPaciente(nomePaciente);
     }
-//
-//    @GetMapping("/Medico/{nomeMedico}")
-//    public List<Consulta> buscaConsultasMedico(@PathVariable String nomeMedico){
-//        return consultaService.buscaConsultaMedicao(nomeMedico);
-//    }
-//
-//    @GetMapping("/dataConsulta/{dataConsulta}")
-//    public List<Consulta> buscaConsultas(@PathVariable String dataConsulta){
-//        return consultaService.buscaConsultaData(dataConsulta);
-//    }
 
     @PostMapping
     public Consulta adicionaConsulta(Consulta consulta){
